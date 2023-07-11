@@ -54,13 +54,18 @@ function getCurrentPlayer() {
 }
 
 function updatePlayerScoresUI() {
-  listPlayerScores(playerOneScores, "playerOneScores");
-  listPlayerScores(playerTwoScores, "playerTwoScores");
+  listPlayerScores(playerOneScores, "playerOneScores", "Player One Scores");
+  listPlayerScores(playerTwoScores, "playerTwoScores", "Player Two Scores");
 }
 
-function listPlayerScores(playerScores, playerScoresDivId) {
+function listPlayerScores(playerScores, playerScoresDivId, headingText) {
   let playerScoresDiv = document.querySelector("div#" + playerScoresDivId);
   playerScoresDiv.innerHTML = "";
+
+  const h2 = document.createElement("h2");
+  h2.textContent = headingText;
+  playerScoresDiv.appendChild(h2);
+
   const ul = document.createElement("ul");
 
   playerScores.playerRolls.forEach(function(roll) {
