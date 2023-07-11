@@ -2,22 +2,21 @@
 <html>
 <head>
   <title>Dice Roll Form</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <h1>Dice Roll Form</h1>
+  <h1>Pig Dice</h1>
 
   <form id="diceRollForm" onsubmit="handleFormSubmission(event)">
     <label for="diceRoll">Dice Roll:</label>
     <button type="submit">Roll Dice</button>
   </form>
 
-  <div id="playerOneScores">
-  </div>
-
-  <div id="playerTwoScores">
+  <div class="column-container">
+    <div id="playerOneScores" class="column"></div>
+    <div id="playerTwoScores" class="column"></div>
   </div>
 
   <script src="js/scripts.js"></script>
 </body>
 </html>
-

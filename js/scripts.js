@@ -33,6 +33,7 @@ PlayerScores.prototype.diceRoll = function() {
 
 // UI LOGIC //
 
+
 let playerOneScores = new PlayerScores();
 let playerTwoScores = new PlayerScores();
 
@@ -62,9 +63,18 @@ function listPlayerScores(playerScores, playerScoresDivId, headingText) {
   let playerScoresDiv = document.querySelector("div#" + playerScoresDivId);
   playerScoresDiv.innerHTML = "";
 
+  const columnContainer = document.createElement("div");
+  columnContainer.classList.add("column-container");
+
+  const column = document.createElement("div");
+  column.classList.add("column");
+
   const h2 = document.createElement("h2");
   h2.textContent = headingText;
-  playerScoresDiv.appendChild(h2);
+  if (isCurrentPlayer(playerScores)) {
+    h2.classList.add("current-player");
+  }
+  column.appendChild(h2);
 
   const h3 = document.createElement("h3");
   if (playerScores.playerScore >= 100) {
@@ -72,9 +82,9 @@ function listPlayerScores(playerScores, playerScoresDivId, headingText) {
   } else {
     h3.innerText = "Current Score: " + playerScores.playerScore;
   }
-  playerScoresDiv.appendChild(h3);
+  column.appendChild(h3);
 
-  playerScores.playerRolls.forEach(function (roll) {
+  playerScores.playerRolls.forEach(function(roll) {
     const div = document.createElement("div");
     div.classList.add("roll-box");
 
@@ -82,6 +92,14 @@ function listPlayerScores(playerScores, playerScoresDivId, headingText) {
     p.innerText = roll;
     div.appendChild(p);
 
-    playerScoresDiv.appendChild(div);
+    column.appendChild(div);
   });
+
+  columnContainer.appendChild(column);
+  playerScoresDiv.appendChild(columnContainer);
+}
+
+function isCurrentPlayer(playerScores) {
+  const currentPlayer = getCurrentPlayer();
+  return playerScores === currentPlayer;
 }

@@ -1,0 +1,14 @@
+.column-container {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+  margin-right: 10px;
+  background-color: aquamarine;
+  padding: 4px;
+}
+
+.current-player {
+  color: red;
+}
