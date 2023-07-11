@@ -1,14 +1,37 @@
+
+.current-player {
+  color: red;
+}
+
 .column-container {
   display: flex;
 }
 
 .column {
   flex: 1;
-  margin-right: 10px;
-  background-color: aquamarine;
-  padding: 4px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.current-player {
+.current-player h2 {
   color: red;
+}
+
+.roll-box {
+  margin-bottom: 5px;
+}
+
+.hold-button {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.current-player .hold-button {
+  background-color: red;
+  color: white;
 }
