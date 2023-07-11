@@ -66,13 +66,14 @@ function listPlayerScores(playerScores, playerScoresDivId, headingText) {
   h2.textContent = headingText;
   playerScoresDiv.appendChild(h2);
 
-  const ul = document.createElement("ul");
+  playerScores.playerRolls.forEach(function (roll) {
+    const div = document.createElement("div");
+    div.classList.add("roll-box"); 
 
-  playerScores.playerRolls.forEach(function(roll) {
-    const li = document.createElement("li");
-    li.innerText = roll;
-    ul.append(li);
+    const p = document.createElement("p");
+    p.innerText = roll;
+    div.appendChild(p);
+
+    playerScoresDiv.appendChild(div);
   });
-
-  playerScoresDiv.append(ul);
 }
