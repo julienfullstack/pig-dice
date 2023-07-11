@@ -23,7 +23,7 @@ PlayerScores.prototype.diceRoll = function() {
     if (this.playerScore > 100) {
       return "You win!";
     } else {
-      return this.playerScore;
+      return diceRoll;
     }
   } else {
     return "End of Turn";
@@ -66,9 +66,13 @@ function listPlayerScores(playerScores, playerScoresDivId, headingText) {
   h2.textContent = headingText;
   playerScoresDiv.appendChild(h2);
 
+  const h3 = document.createElement("h3");
+  h3.innerText = "Current Score: " + playerScores.playerScore;
+  playerScoresDiv.appendChild(h3);
+
   playerScores.playerRolls.forEach(function (roll) {
     const div = document.createElement("div");
-    div.classList.add("roll-box"); 
+    div.classList.add("roll-box");
 
     const p = document.createElement("p");
     p.innerText = roll;
