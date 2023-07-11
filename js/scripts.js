@@ -54,8 +54,8 @@ function getCurrentPlayer() {
 }
 
 function updatePlayerScoresUI() {
-  listPlayerScores(playerOneScores, "playerOneScores", "Player One Scores");
-  listPlayerScores(playerTwoScores, "playerTwoScores", "Player Two Scores");
+  listPlayerScores(playerOneScores, "playerOneScores", "Player One Rolls");
+  listPlayerScores(playerTwoScores, "playerTwoScores", "Player Two Rolls");
 }
 
 function listPlayerScores(playerScores, playerScoresDivId, headingText) {
@@ -67,7 +67,11 @@ function listPlayerScores(playerScores, playerScoresDivId, headingText) {
   playerScoresDiv.appendChild(h2);
 
   const h3 = document.createElement("h3");
-  h3.innerText = "Current Score: " + playerScores.playerScore;
+  if (playerScores.playerScore >= 100) {
+    h3.innerText = "You win!";
+  } else {
+    h3.innerText = "Current Score: " + playerScores.playerScore;
+  }
   playerScoresDiv.appendChild(h3);
 
   playerScores.playerRolls.forEach(function (roll) {
