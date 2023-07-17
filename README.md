@@ -14,7 +14,6 @@
 * _CSS_
 * _Java Script_
 * _Git_
-* _Java Script_
 
 ## Description
 
