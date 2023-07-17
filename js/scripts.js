@@ -57,9 +57,15 @@ function updatePlayerScoresUI() {
   const holdButton = document.getElementById('holdButton'); 
   const holdButtonContainer = holdButton.parentNode;
   holdButtonContainer.classList.remove('current-player');
-  if (currentPlayer === playerOneScores) {
-  holdButtonContainer.classList.add('current-player');
+  if (currentPlayerScores === playerOneScores) {
+    holdButtonContainer.classList.add('current-player');
+  }
+  updateCurrentPlayerUI();
 }
+
+function updateCurrentPlayerUI() {
+  const currentPlayerDiv = document.getElementById('currentPlayer');
+  currentPlayerDiv.textContent = "Current Player: " + (currentPlayerScores === playerOneScores ? "Player One" : "Player Two");
 }
 
 function listPlayerScores(playerScores, playerScoresDivId, headingText) {
@@ -107,3 +113,5 @@ function listPlayerScores(playerScores, playerScoresDivId, headingText) {
   columnContainer.appendChild(column);
   playerScoresDiv.appendChild(columnContainer);
 }
+
+updateCurrentPlayerUI();
