@@ -109,9 +109,9 @@ function listPlayerScores(playerScores, playerScoresDivId, headingText) {
   column.appendChild(holdButton);
 
 
+  const reversedPlayerRolls = playerScores.playerRolls.slice().reverse();
 
-
-  playerScores.playerRolls.forEach(function (roll) {
+  reversedPlayerRolls.forEach(function (roll) {
     const div = document.createElement("div");
     div.classList.add("roll-box");
 
@@ -125,4 +125,5 @@ function listPlayerScores(playerScores, playerScoresDivId, headingText) {
   columnContainer.appendChild(column);
   playerScoresDiv.appendChild(columnContainer);
 }
+
 updateCurrentPlayerUI();
