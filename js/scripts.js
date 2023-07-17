@@ -17,9 +17,7 @@ PlayerScores.prototype.rollDice = function() {
 };
 
 PlayerScores.prototype.holdScore = function() {
-  // Add the current player's score to their total score
   var totalScore = this.playerScore;
-  this.playerScore = 0;
   return totalScore;
 };
 
@@ -29,13 +27,22 @@ PlayerScores.prototype.holdScore = function() {
 let playerOneScores = new PlayerScores();
 let playerTwoScores = new PlayerScores();
 let currentPlayerScores = playerOneScores;
+const targetScore = 100;
 
 function handleFormSubmission(event) {
   event.preventDefault();
   const rollResult = currentPlayerScores.rollDice();
   currentPlayerScores.playerRolls.push(rollResult);
-  
+
   if (rollResult === "Oops! You rolled a 1.") {
+    currentPlayerScores = toggleCurrentPlayer();
+  }
+
+  if (currentPlayerScores.playerScore >= targetScore) {
+    playerOneScores.playerScore = 0;
+    playerTwoScores.playerScore = 0;
+    alert("Player " + (currentPlayerScores === playerOneScores ? "One" : "Two") + " wins!");
+  } else {
     currentPlayerScores = toggleCurrentPlayer();
   }
 
@@ -48,7 +55,7 @@ function toggleCurrentPlayer() {
   } else {
     currentPlayerScores = playerOneScores;
   }
-  updateCurrentPlayerUI(); // Call the updateCurrentPlayerUI function here
+  updateCurrentPlayerUI();
   return currentPlayerScores;
 }
 
@@ -90,6 +97,20 @@ function listPlayerScores(playerScores, playerScoresDivId, headingText) {
   h3.innerText = "Current Score: " + playerScores.playerScore;
   column.appendChild(h3);
 
+  const holdButton = document.createElement("button");
+  holdButton.innerText = "Hold";
+  holdButton.addEventListener("click", function() {
+    const totalScore = playerScores.holdScore();
+    alert("Score held! Total score: " + totalScore);
+    currentPlayerScores = toggleCurrentPlayer();
+    updatePlayerScoresUI();
+  });
+
+  column.appendChild(holdButton);
+
+
+
+
   playerScores.playerRolls.forEach(function (roll) {
     const div = document.createElement("div");
     div.classList.add("roll-box");
@@ -101,18 +122,7 @@ function listPlayerScores(playerScores, playerScoresDivId, headingText) {
     column.appendChild(div);
   });
 
-  const holdButton = document.createElement("button");
-  holdButton.innerText = "Hold";
-  holdButton.addEventListener("click", function() {
-    const totalScore = playerScores.holdScore();
-    alert("Score held! Total score: " + totalScore);
-    currentPlayerScores = toggleCurrentPlayer();
-    updatePlayerScoresUI();
-  });
-
-  column.appendChild(holdButton);
   columnContainer.appendChild(column);
   playerScoresDiv.appendChild(columnContainer);
 }
-
 updateCurrentPlayerUI();

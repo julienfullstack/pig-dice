@@ -7,15 +7,17 @@
 <body>
 
   <h1>Pig Dice Game</h1>
+  
   <div id="currentPlayer"></div>
+
+  <form id="diceRollForm" onsubmit="handleFormSubmission(event)">
+    <button id="rollButton" type="submit" class="roll-button">Roll</button>
+  </form>
   <div class="row">
     <div id="playerOneScores" class="column"></div>
     <div id="playerTwoScores" class="column"></div>
   </div>
 
-  <form id="diceRollForm" onsubmit="handleFormSubmission(event)">
-    <button id="rollButton" type="submit" class="roll-button">Roll</button>
-  </form>
   
 
   <script src="js/scripts.js"></script>
