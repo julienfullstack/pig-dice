@@ -35,3 +35,4 @@ A simple website which uses object-oriented JavaScript to play pig-dice.
 _[MIT](https://choosealicense.com/licenses/mit/)_
 
 Copyright (c) _2023_ _Julien Lenaz_ 
+
