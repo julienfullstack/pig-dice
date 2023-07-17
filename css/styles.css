@@ -1,21 +1,4 @@
-
 .current-player {
-  color: red;
-}
-
-.column-container {
-  display: flex;
-}
-
-.column {
-  flex: 1;
-  padding: 10px;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.current-player h2 {
   color: red;
 }
 
@@ -24,14 +7,47 @@
 }
 
 .hold-button {
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 5px 10px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
   font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.current-player .hold-button {
-  background-color: red;
-  color: white;
+.hold-button:hover {
+  background-color: #45a049;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+  margin-right: 1%;
+  vertical-align: top;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#playerOneScores {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#playerTwoScores {
+  background-color: #eaeaea;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
