@@ -48,6 +48,7 @@ function toggleCurrentPlayer() {
   } else {
     currentPlayerScores = playerOneScores;
   }
+  updateCurrentPlayerUI(); // Call the updateCurrentPlayerUI function here
   return currentPlayerScores;
 }
 
