@@ -18,7 +18,7 @@
 
 ## Description
 
-A simple website which uses object-oriented javascript to play pig-dice.
+A simple website which uses object-oriented JavaScript to play pig-dice.
 
 ## Setup/Installation Requirements
 
