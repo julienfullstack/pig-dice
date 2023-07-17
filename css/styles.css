@@ -1,12 +1,83 @@
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.column {
+  flex: 1;
+  margin-right: 2%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 .current-player {
-  color: red;
+  font-size: 24px;
+  color: #ff7043;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.player-scores {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h2 {
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+
+.player-scores h2 {
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.player-scores h3 {
+  font-size: 20px;
+  color: #666666;
 }
 
 .roll-box {
+  background-color: #eeeeee;
+  padding: 10px;
   margin-bottom: 5px;
+  border-radius: 3px;
+  font-size: 25px;
 }
 
-.hold-button {
+.roll-box p {
+  font-size: 18px;
+  color: #333333;
+  margin: 0;
+}
+
+.roll-button {
   background-color: #4CAF50;
   border: none;
   color: white;
@@ -14,40 +85,30 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  font-family: Arial, sans-serif;
   font-size: 16px;
   margin-top: 10px;
-  cursor: pointer;
   transition: background-color 0.3s;
+  margin: 0 auto;
+  display: block;
 }
 
-.hold-button:hover {
+.roll-button:hover {
   background-color: #45a049;
 }
 
-.row {
-  display: flex;
+#currentPlayer {
+  background-color: #ff9800;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
 }
 
-.column {
-  flex: 1;
-  margin-right: 1%;
-  vertical-align: top;
-  background-color: #f2f2f2;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#playerOneScores {
-  background-color: #f2f2f2;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#playerTwoScores {
-  background-color: #eaeaea;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+h1 {
+  text-align: center;
+  font-size: 35px;
 }
