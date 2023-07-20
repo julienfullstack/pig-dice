@@ -21,7 +21,6 @@ PlayerScores.prototype.holdScore = function() {
   return totalScore;
 };
 
-function displayContactDetails(event) {
 
   
 // UI LOGIC //
@@ -44,8 +43,6 @@ function handleFormSubmission(event) {
     playerOneScores.playerScore = 0;
     playerTwoScores.playerScore = 0;
     alert("Player " + (currentPlayerScores === playerOneScores ? "One" : "Two") + " wins!");
-  } else {
-    currentPlayerScores = toggleCurrentPlayer();
   }
 
   updatePlayerScoresUI();
