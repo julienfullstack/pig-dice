@@ -4,9 +4,9 @@
 
 #### _A webpage for playing pig dice_
 
-[GitHub Pages Site](https://julienlen.github.io/pig-dice)
+[GitHub Pages Site](https://julienfullstack.github.io/pig-latin/)
 
-[Repo](https://github.com/julienlen/pig-dice.git) 
+[Repo](https://github.com/julienfullstack/pig-latin) 
 
 ## Technologies Used
 
