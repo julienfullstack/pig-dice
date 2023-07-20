@@ -23,7 +23,7 @@ PlayerScores.prototype.holdScore = function() {
 
 
   
-// UI LOGIC //
+/// UI LOGIC ///
 
 let playerOneScores = new PlayerScores();
 let playerTwoScores = new PlayerScores();
