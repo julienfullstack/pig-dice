@@ -21,7 +21,9 @@ PlayerScores.prototype.holdScore = function() {
   return totalScore;
 };
 
+function displayContactDetails(event) {
 
+  
 // UI LOGIC //
 
 let playerOneScores = new PlayerScores();
